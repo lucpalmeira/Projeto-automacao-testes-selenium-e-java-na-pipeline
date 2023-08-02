@@ -32,3 +32,17 @@ jobs:
       - name: Run Test
         run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-ci
 
+      - name: Gerar Relatórios
+        if: ${{ always() }}
+        run: mvn cluecumber-report:reporting
+
+      - name: Arquivar Relatórios
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: Report-Tests
+          path: "**/formated-report/"
+
+
+
+
