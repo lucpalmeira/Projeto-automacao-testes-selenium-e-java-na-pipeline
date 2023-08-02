@@ -33,11 +33,11 @@ jobs:
         run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-ci
 
       - name: Gerar Relatórios
-#        if: aways()
+        if: ${{ always() }}
         run: mvn cluecumber-report:reporting
 
       - name: Arquivar Relatórios
-#        if: aways()
+        if: ${{ always() }}
         uses: actions/upload-artifact@v3
         with:
           name: Report-Tests
