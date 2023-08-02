@@ -38,7 +38,7 @@ jobs:
 
       - name: Arquivar Relatórios
         if: ${{ always() }}
-        uses: actions/upload-artifact@v3
+        uses: persist-to-workspace
         with:
           name: Report-Tests
           path: "**/formated-report/"
