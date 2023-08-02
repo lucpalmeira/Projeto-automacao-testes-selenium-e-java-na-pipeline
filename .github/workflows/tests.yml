@@ -38,10 +38,10 @@ jobs:
 
       - name: Arquivar Relatórios
         if: ${{ always() }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Report-Tests
-          path: "**/formated-report/"
+          path: "/target/formated-report/"
 
 
 
